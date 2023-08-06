@@ -31,8 +31,7 @@ jobs:
          flake8 --ignore=E501,W504
       - name: run tests
         run: | 
-          pip install pytest
-          pytest
+          python examples/run.py
       - name: check version
         run: |
           pip install requests
