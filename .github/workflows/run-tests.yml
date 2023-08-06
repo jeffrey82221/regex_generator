@@ -23,7 +23,7 @@ jobs:
       - name: test pkg 1
         run: python -c "from regex_generator import RegexGenerator"
       - name: test pkg 2
-        run: python -c "from regex_generator import RegexGenerator; RegexGenerator()" 
+        run: python -c "from regex_generator import RegexGenerator; RegexGenerator(bloom_max_item_count=1000)" 
       - name: run type checking
         run: | 
          pip install mypy
