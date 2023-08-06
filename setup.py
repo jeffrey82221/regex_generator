@@ -50,7 +50,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
 
     ],
-    python_requires='>=3.7',
+    python_requires='>=3.8, !=3.11.*',
     tests_require=['pytest'],
     install_requires=[
         'exrex==0.11.0',

@@ -2,8 +2,8 @@ import requests
 import pkg_resources
 
 
-PKG_NAME = 'regex-inference'
-IMPORT_NAME = 'regex_inference'
+PKG_NAME = 'regex-generator'
+IMPORT_NAME = 'regex_generator'
 
 
 def get_all_versions() -> str:
