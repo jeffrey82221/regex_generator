@@ -33,7 +33,7 @@ from regexfactory.patterns import (
 
 __all__ = ['PatternGenerator']
 
-PRINTABLES = []
+PRINTABLES: typing.List[str] = []
 PRINTABLES.extend(string.ascii_letters)
 PRINTABLES.extend(string.digits)
 PRINTABLES.extend(string.hexdigits)
@@ -113,11 +113,6 @@ class CharGenerator:
         self._amount_complexity = amount_complexity
         self._special_char_prob = special_char_prob
         self._complex_char_prob = complex_char_prob
-        # self._start_candidates = CharGenerator.printable_escapes
-
-        # self._start_candidates.extend(
-        #     CharGenerator.special_chars_without_any)
-        # self._start_candidates.append(ANY)
 
     def get_random_chars(self, length: int) -> typing.List[RegexPattern]:
         """
@@ -293,7 +288,7 @@ class PatternGenerator:
         """
         Generate random group pattern that includes Or/Amount/Multi/Optional patterns
         """
-        candidates = []
+        candidates: typing.List[Group] = []
         weights = []
         while len(candidates) < group_count:
             group = self._get_random_group_pattern(recurse=recurse)
