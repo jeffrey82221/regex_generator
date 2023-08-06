@@ -20,6 +20,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -e .
+      - name: test pkg 1
+        run: python -c "from regex_generator import RegexGenerator"
+      - name: test pkg 2
+        run: python -c "from regex_generator import RegexGenerator; RegexGenerator()" 
       - name: run type checking
         run: | 
          pip install mypy
@@ -31,7 +35,8 @@ jobs:
          flake8 --ignore=E501,W504
       - name: run tests
         run: | 
-          python examples/run.py
+          pip install pytest
+          pytest
       - name: check version
         run: |
           pip install requests
