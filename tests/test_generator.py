@@ -1,5 +1,5 @@
 import re
-from regex_generator import RegexGenerator
+from random_regex import RegexGenerator
 
 
 def test_generate():
