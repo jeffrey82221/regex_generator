@@ -27,7 +27,8 @@ class RegexGenerator:
     its complexity, length, and examples
     """
 
-    def __init__(self, max_complexity=1000, max_length=20, bloom_max_item_count=100000000000, bloom_fpr=0.01):
+    def __init__(self, max_complexity=1000, max_length=20,
+                 bloom_max_item_count=100000000000, bloom_fpr=0.01):
         self._max_complexity = max_complexity
         self._max_length = max_length
         self._pattern_generator = PatternGenerator(
