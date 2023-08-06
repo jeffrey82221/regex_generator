@@ -54,8 +54,7 @@ setuptools.setup(
     tests_require=['pytest'],
     install_requires=[
         'exrex==0.11.0',
-        'cytoolz==0.12.1',
-        'toolz',
+        'toolz==0.12.0',
         'rbloom==1.4.5',
         'regexfactory==1.0.0'
     ]
