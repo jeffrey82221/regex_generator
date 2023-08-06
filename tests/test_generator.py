@@ -3,7 +3,7 @@ from regex_generator import RegexGenerator
 
 
 def test_generate():
-    regex_generator = RegexGenerator().generate()
+    regex_generator = RegexGenerator(bloom_max_item_count=10).generate()
     instance = next(regex_generator)
     regex = instance['regex']
     complexity = instance['complexity']
