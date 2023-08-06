@@ -2,8 +2,8 @@ import requests
 import pkg_resources
 
 
-PKG_NAME = 'regex-generator'
-IMPORT_NAME = 'regex_generator'
+PKG_NAME = 'random-regex'
+IMPORT_NAME = 'random_regex'
 
 
 def get_all_versions() -> str:

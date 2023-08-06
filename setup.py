@@ -18,12 +18,12 @@ with open("README.md", "r") as fh:
 
 
 with open(str(pathlib.Path(__file__).parent.absolute()) +
-          "/regex_generator/version.py", "r") as fh:
+          "/random_regex/version.py", "r") as fh:
     version = fh.read().split("=")[1].replace("'", "")
 
 setuptools.setup(
 
-    name="regex-generator",
+    name="random-regex",
 
     version=version,
 

@@ -24,7 +24,7 @@ jobs:
         run: | 
          pip install mypy
          pip install types-requests
-         mypy regex_generator --ignore-missing-imports
+         mypy random_regex --ignore-missing-imports
       - name: flake8 checking
         run: |
          pip install flake8
