@@ -22,7 +22,7 @@ with open(HOME +
           "/random_regex/version.py", "r") as fh:
     version = fh.read().split("=")[1].replace("'", "")
 
-with open(HOME + '/requirements-test.txt', 'r') as f:
+with open(HOME + '/random_regex/requirements-test.txt', 'r') as f:
     test_deps = [x.strip() for x in f]
 
 setuptools.setup(
