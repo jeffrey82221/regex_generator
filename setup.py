@@ -21,6 +21,9 @@ with open(str(pathlib.Path(__file__).parent.absolute()) +
           "/random_regex/version.py", "r") as fh:
     version = fh.read().split("=")[1].replace("'", "")
 
+with open('requirements-test.txt', 'r') as f:
+    test_deps = [x.strip() for x in f]
+
 setuptools.setup(
 
     name="random-regex",
@@ -51,11 +54,14 @@ setuptools.setup(
 
     ],
     python_requires='>=3.8, !=3.11.*',
-    tests_require=['pytest'],
+    tests_require=test_deps,
     install_requires=[
         'exrex==0.11.0',
         'toolz==0.12.0',
-        'rbloom==1.4.5',
-        'regexfactory==1.0.0'
-    ]
+        'regexfactory==1.0.0',
+        'pybloom3'
+    ],
+    extras={
+        'test': test_deps
+    }
 )
