@@ -16,12 +16,13 @@ with open("README.md", "r") as fh:
 
     long_description = fh.read()
 
+HOME = str(pathlib.Path(__file__).parent.absolute())
 
-with open(str(pathlib.Path(__file__).parent.absolute()) +
+with open(HOME +
           "/random_regex/version.py", "r") as fh:
     version = fh.read().split("=")[1].replace("'", "")
 
-with open('requirements-test.txt', 'r') as f:
+with open(HOME + '/requirements-test.txt', 'r') as f:
     test_deps = [x.strip() for x in f]
 
 setuptools.setup(
