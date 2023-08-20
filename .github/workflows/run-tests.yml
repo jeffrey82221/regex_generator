@@ -31,7 +31,7 @@ jobs:
          flake8 --ignore=E501,W504
       - name: run tests
         run: | 
-          pip install -r random_regex/requirements-test.txt
+          pip install -r requirements-test.txt
           pytest
       - name: check version
         run: |
