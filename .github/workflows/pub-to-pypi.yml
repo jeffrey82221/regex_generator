@@ -28,5 +28,12 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD}}
         run: |
           twine upload dist/*
-      - name: try install the new version
+  try-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python 
+        uses: actions/setup-python@v4
+        with:
+          python-version: python3.8
+      - name: Install Package
         run: pip install random-regex
