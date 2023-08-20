@@ -17,7 +17,6 @@ import exrex
 import re
 from toolz import curried
 from toolz.functoolz import pipe
-from rbloom import Bloom
 from .random_pattern import PatternGenerator
 
 
@@ -28,13 +27,17 @@ class RegexGenerator:
     """
 
     def __init__(self, max_complexity=1000, max_length=20,
-                 bloom_max_item_count=100000000000, bloom_fpr=0.01):
+                 item_count=100, bloom_fpr=0.001, bloom_cls=None):
         self._max_complexity = max_complexity
         self._max_length = max_length
         self._pattern_generator = PatternGenerator(
             **self.initial_complexities
         )
-        self._bloom = Bloom(bloom_max_item_count, bloom_fpr)
+        if bloom_cls is None:
+            from pybloom import ScalableBloomFilter
+            self._bloom = ScalableBloomFilter(item_count, bloom_fpr)
+        else:
+            self._bloom = bloom_cls(item_count, bloom_fpr)
 
     @property
     def initial_complexities(self) -> dict:

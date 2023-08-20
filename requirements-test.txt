@@ -1,0 +1,4 @@
+pytest
+rbloom>=1.4.5
+bloom-filter2
+bloom-filter
