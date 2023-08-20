@@ -28,3 +28,5 @@ jobs:
           TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD}}
         run: |
           twine upload dist/*
+      - name: try install the new version
+        run: pip install random-regex
